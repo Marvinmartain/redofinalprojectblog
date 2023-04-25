@@ -48,3 +48,18 @@ export const signup = async(req,res,next) =>{
     return res.status(201).json({user})
 
 }
+
+const login = async (req, res, next) => {
+    const {email, password} = req.body;   
+    let existingUser; 
+    try {
+     
+    existingUser = await User.findOne({email});
+    
+    } catch (err) {
+        console.log(err);
+    }
+    if(existingUser) {
+        return res.status(404).json({message: "Couldn't Find User By This Email"});
+}
+}
