@@ -1,14 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
-// import { Router } from 'express';
-import router from './routes/user-routes';
+import { Router } from 'express';
+// import router from './routes/user-routes';
 
 
 
 const app = express();
 
 app.use(express.json());
-app.use("/api/user", router);
+// app.use("/api/user", router);
 
 mongoose.connect(
   
