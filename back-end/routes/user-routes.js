@@ -1,12 +1,23 @@
-import express from "express";
-import { getAllUser, signup } from "../controllers/user-controller";
+import mongoose from "mongoose";
 
-const router = express.Router();
+const Schema = mongoose.Schema;
 
-router.get("/", getAllUser);
-router.post("/signup", signup)
-router.post("/login", login);
-
-
-
-export default router;
+const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+    minlength: 6,
+  },
+  blogs: [{ type: mongoose.Types.ObjectId, ref: "Blog", required: true }],
+});
+export default mongoose.model("User", userSchema);
+// users
