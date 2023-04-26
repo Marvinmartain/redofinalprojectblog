@@ -46,6 +46,7 @@ export const updateBlog = async(req, res,nest) => {
         return console.log(err)
     }
     if (!blog) {
-        return
+        return res.status(500).json({message:"Unable To Update The Blog"})
     }
-}
+    return res.status(200).json({blog});
+};
