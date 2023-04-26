@@ -32,5 +32,8 @@ export const addBlog = async(req, res, next) => {
 };
 
 export const updateBlog = async(req, res,nest) => {
-    const blogId = req.params.id 
+    const blogId = req.params.id;
+
+    const blog = await Blog.findByIdAndUpdate(blogId,{})
+    
 }
