@@ -35,10 +35,12 @@ export const updateBlog = async(req, res,nest) => {
     const {title,description} = req.body;
     const blogId = req.params.id;
     let blog;
-    const blog = await Blog.findByIdAndUpdate(blogId,{
+    try{
+    blog = await Blog.findByIdAndUpdate(blogId,{
         title,
         description
+    
     })
 
-
+    }
 }
