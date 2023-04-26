@@ -42,5 +42,10 @@ export const updateBlog = async(req, res,nest) => {
     
     })
 
+    }catch(err) {
+        return console.log(err)
+    }
+    if (!blog) {
+        return
     }
 }
