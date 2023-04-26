@@ -31,4 +31,6 @@ export const addBlog = async(req, res, next) => {
    return res.status(200).json({blog})
 };
 
-export const updateBlog = async(req, res,nest)
+export const updateBlog = async(req, res,nest) => {
+    const blogId = req.params.id 
+}
