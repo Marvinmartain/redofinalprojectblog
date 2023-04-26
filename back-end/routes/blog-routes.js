@@ -5,6 +5,6 @@ const blogRouter = express.Router();
 
 blogRouter.get("/", getAllBlogs);
 blogRouter.post("/add", addBlog)
-blogRouter.put('/update',)
+blogRouter.put('/update/:id',)
 
 export default blogRouter;
